@@ -15,3 +15,5 @@
     * Team lead/Documentation lead
 * **Zuberi Thompson**
     * Data modeler
+* **Albert Austin IV**
+    * Testing Lead
