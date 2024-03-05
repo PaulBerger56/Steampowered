@@ -1,13 +1,20 @@
 package org.example.steampowered;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
 
 class UserTest {
+    
+    private static User paul;
 
-    User paul = new User("WebsiteMindOfPaul", "MindOfPaul", "1111");
+    @BeforeAll
+    public static void setUp(){
+        paul = new User("MindOfPaul", "1111");
+        paul.setWebsiteUserName("WebsiteMindOfPaul");
+    }        
 
     @Test
     void getWebsiteUserName() {
