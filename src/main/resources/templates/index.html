@@ -14,7 +14,10 @@
     <div class="tab-bar"> <!-- NAVIGATION BAR -->
         <div class="tab"><a th:href="@{profile}">PROFILE</a></div>
         <div class="tab"><a th:href="@{multiplayer}">MULTIPLAYER</a></div>
-        <!-- <div class="tab"><a th:href="@{/redirect}">Steam Login</a></div> -->
+        <!-- <div class="tab"><a th:href="@{/redirect}">Steam Login</a></div> Commented off just in case
+        the new Login session does not work below
+        -->
+
         <div th:if="${personaname}">
             <h2 th:text="${personaname}"></h2>
             <img th:src="${avatarUrl}" alt="Steam Avatar">

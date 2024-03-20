@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 
 import jakarta.servlet.http.HttpServletRequest;
 
+import static org.example.steampowered.Constants.PLAYER_SUMMARIES_API_URL;
+
 @Service
 public class OpenIdService {
 
@@ -81,7 +83,7 @@ public class OpenIdService {
     }
 
     public SteamUserInfo getSteamUserInfo(String steamId) throws IOException {
-        String apiUrl = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=B6B215A4D22ACEB1D8161A4CB318F136&steamids=%s" + steamId;
+        String apiUrl = PLAYER_SUMMARIES_API_URL + steamId;
 
         URL url = new URL(apiUrl);
         InputStream inputStream = url.openStream();
