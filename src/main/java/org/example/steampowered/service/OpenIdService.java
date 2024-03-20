@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 
-import org.example.steampowered.controller.SteamUserInfo;
+import org.example.steampowered.pojo.User;
 import org.expressme.openid.Association;
 import org.expressme.openid.Endpoint;
 import org.expressme.openid.OpenIdManager;
@@ -82,7 +82,7 @@ public class OpenIdService {
         // }        
     }
 
-    public SteamUserInfo getSteamUserInfo(String steamId) throws IOException {
+    public User.SteamUserInfo SteamUserInfo(String steamId) throws IOException {
         String apiUrl = PLAYER_SUMMARIES_API_URL + steamId;
 
         URL url = new URL(apiUrl);
@@ -97,7 +97,7 @@ public class OpenIdService {
         String avatarUrl = playerInfo.getString("avatarmedium");
         String personaname = playerInfo.getString("personaname");
 
-        return new SteamUserInfo(avatarUrl, personaname);
+        return new User.SteamUserInfo(avatarUrl, personaname);
     }
 
 }

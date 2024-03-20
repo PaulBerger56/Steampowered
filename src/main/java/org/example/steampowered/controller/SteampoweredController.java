@@ -1,6 +1,7 @@
 package org.example.steampowered.controller;
 
 import jakarta.servlet.http.HttpSession;
+import org.example.steampowered.pojo.User;
 import org.example.steampowered.service.OpenIdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +28,7 @@ public class SteampoweredController {
         String steamId = openIdService.getSteamId();
         if (steamId != null) {
             try {
-                SteamUserInfo userInfo = openIdService.getSteamUserInfo(steamId);
+                User.SteamUserInfo userInfo = openIdService.SteamUserInfo(steamId);
                 model.addAttribute("avatarUrl", userInfo.getAvatarUrl());
                 model.addAttribute("personaname", userInfo.getPersonaname());
             } catch (IOException e) {

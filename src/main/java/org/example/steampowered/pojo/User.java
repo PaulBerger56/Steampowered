@@ -8,9 +8,10 @@ public class User {
 
     // Uses this constructor when using steam openID
     // WebsiteUsername will be added later
-    public User(String steamUserName, String steamID) {        
+    public User(String steamUserName, String steamID) {
         this.steamUserName = steamUserName;
         this.steamID = steamID;
+
     }
 
     public String getWebsiteUserName() {
@@ -35,5 +36,23 @@ public class User {
 
     public void setSteamID(String steamID) {
         this.steamID = steamID;
+    }
+
+    public static class SteamUserInfo {
+        private String avatarUrl;
+        private String personaname;
+
+        public SteamUserInfo(String avatarUrl, String personaname) {
+            this.avatarUrl = avatarUrl;
+            this.personaname = personaname;
+        }
+
+        public String getAvatarUrl() {
+            return avatarUrl;
+        }
+
+        public String getPersonaname() {
+            return personaname;
+        }
     }
 }
