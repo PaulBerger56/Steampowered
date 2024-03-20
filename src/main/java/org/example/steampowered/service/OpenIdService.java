@@ -1,11 +1,18 @@
 package org.example.steampowered.service;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
+
+import org.example.steampowered.controller.SteamUserInfo;
 import org.expressme.openid.Association;
 import org.expressme.openid.Endpoint;
 import org.expressme.openid.OpenIdManager;
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -71,5 +78,24 @@ public class OpenIdService {
         // if(steamId != null) {
         //     System.out.println("Steam id: " + steamId);
         // }        
-    }    
+    }
+
+    public SteamUserInfo getSteamUserInfo(String steamId) throws IOException {
+        String apiUrl = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=B6B215A4D22ACEB1D8161A4CB318F136&steamids=%s" + steamId;
+
+        URL url = new URL(apiUrl);
+        InputStream inputStream = url.openStream();
+        Scanner scanner = new Scanner(inputStream);
+        String responseBody = scanner.useDelimiter("\\A").next();
+        scanner.close();
+
+        JSONObject jsonResponse = new JSONObject(responseBody);
+        JSONObject playerInfo = jsonResponse.getJSONObject("response").getJSONArray("players").getJSONObject(0);
+
+        String avatarUrl = playerInfo.getString("avatarmedium");
+        String personaname = playerInfo.getString("personaname");
+
+        return new SteamUserInfo(avatarUrl, personaname);
+    }
+
 }
