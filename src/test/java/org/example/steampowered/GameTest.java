@@ -2,6 +2,8 @@ package org.example.steampowered;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.example.steampowered.pojo.Game;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +35,7 @@ public class GameTest {
             //if (mpFlag.equals("Multi-player")) {
             //    mp = true;
             //}
-            g = new Game(ID, name, image);
+            // g = new Game(ID, name, image);
         } catch(Exception e) {
             e.printStackTrace();
         }
