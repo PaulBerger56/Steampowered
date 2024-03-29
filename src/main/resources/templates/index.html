@@ -29,34 +29,77 @@
 </div>
 
 <div class="bottom-border"></div>
-
+<!--READS JSON ATTRIBUTE FROM THE CONTROLLER AS AN ARRAY -->
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var gamesJsonString = /*[[${gamesJson}]]*/ '[]';
+        var games = JSON.parse(gamesJsonString);
+        //FOR TESTING PURPOSES
+        console.log(games);
+        console.log(Array.isArray(games));
+        /*]]>*/
+        function getRandomSubsetOfGames(games, min = 2, max = 10) {
+            const shuffled = games.sort(() => 0.5 - Math.random());//SHUFFLES THE ARRAY
+            return shuffled.slice(0, Math.max(min, Math.min(shuffled.length, max))); //SLICES THE ARRAY INTO A MIN OF 2 GAMES A MAX OF 10
+        }
+    </script>
 <!--CREATION OF WHEEL AREA AND SECTIONS FOR TESTING/SET TO CHANGE -->
 <script>const canvas = document.getElementById('wheelCanvas');
 const ctx = canvas.getContext('2d');
-const sections = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+console.log(games);
+let currentGamesSubset = getRandomSubsetOfGames(games);
+let sections = currentGamesSubset.map(game => game.name);
+console.log(sections);
 let currentRotation = 0;
 
+
 //WHEEL CREATION
+function calculateFontSize(text, ctx, maxTextWidth) {
+    let fontSize = 20; //BASE FONT SIZE
+    ctx.font = `${fontSize}px Arial`;
+    let textWidth = ctx.measureText(text).width;
+
+    //ALLOWS FONT SIZE TO SHRINK IF THE TEXT WIDTH IS TOO LARGE BUT DOES NOT ALLOW IT TO GO BELOW A CERTAIN SIZE
+    while (textWidth > maxTextWidth && fontSize > 12) {
+        fontSize -= 1;
+        ctx.font = `${fontSize}px Arial`;
+        textWidth = ctx.measureText(text).width;
+    }
+
+    return fontSize;
+}
+
 function drawWheel() {
     const sectionAngle = 2 * Math.PI / sections.length;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     for (let i = 0; i < sections.length; i++) {
         ctx.beginPath();
-        ctx.moveTo(250, 250); // Wheel center
+        ctx.moveTo(250, 250); //WHEEL CENTER
         ctx.arc(250, 250, 250, sectionAngle * i, sectionAngle * (i + 1), false);
         ctx.closePath();
-        ctx.fillStyle = i % 2 === 0 ? '#FFF' : '#DDD';
+        ctx.fillStyle = i % 2 === 0 ? '#050505' : '#080c12';
         ctx.fill();
         ctx.stroke();
 
-        //TEXT ON WHEEL
-        ctx.fillStyle = '#000';
-        ctx.font = '20px Arial';
+        //MAX TEXT WIDTH ALLOWED
+        const maxTextWidth = 250 * Math.sin(sectionAngle / 2) * 0.8;
+
+        //CALCULATES FONT SIZE
+        const fontSize = calculateFontSize(sections[i], ctx, maxTextWidth);
+        ctx.font = `${fontSize}px Arial`;
+
+        //ADJUSTS TEXT PLACEMENT
+        const baseRadius = 200;
+        const textRadiusAdjustmentFactor = (30 - fontSize) * 3;
+        const textRadius = baseRadius * 0.5 + textRadiusAdjustmentFactor;
+
+        ctx.fillStyle = '#f7f8fa';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         const textAngle = sectionAngle * i + sectionAngle / 2;
-        const textX = 250 + Math.cos(textAngle) * 200 * 0.5;
-        const textY = 250 + Math.sin(textAngle) * 200 * 0.5;
+        const textX = 250 + Math.cos(textAngle) * textRadius;
+        const textY = 250 + Math.sin(textAngle) * textRadius;
         ctx.fillText(sections[i], textX, textY);
     }
 }
@@ -97,8 +140,38 @@ function spinWheel() {
         else {
             const landedSectionIndex = Math.floor(((360 - currentRotation) % 360) / (360 / sections.length));
             showResultAndButtons(sections[landedSectionIndex]);
-            const resultText = `Landed on section: ${sections[landedSectionIndex]}`;
+            const resultText = `And the winner is: ${sections[landedSectionIndex]} !`;
             document.getElementById('result').textContent = resultText;
+            if (typeof landedSectionIndex === 'undefined' || landedSectionIndex < 0 || landedSectionIndex >= games.length) {
+                console.log('Invalid section index');
+                return;
+            }
+            const selectedGame = games[landedSectionIndex];
+            const imgIconURL = selectedGame.imgIconURL;//ACCESSES THE IMG HEADER OF THE GAME
+
+            //PRINTS IMAGE AT BOTTOM OF THE PAGE
+
+            let imgDisplayArea = document.getElementById('imgDisplayArea');
+            if (!imgDisplayArea) {
+                imgDisplayArea = document.createElement('div');
+                imgDisplayArea.id = 'imgDisplayArea';
+                document.body.appendChild(imgDisplayArea); // Append the display area to the document body
+            }
+            imgDisplayArea.style.padding = '20px 250px';
+            imgDisplayArea.style.textAlign = 'left';
+            imgDisplayArea.style.color = 'white';
+            imgDisplayArea.style.marginTop = '50px';
+            imgDisplayArea.style.fontSize = '24px';
+            imgDisplayArea.style.fontWeight = 'bold';
+
+
+            imgDisplayArea.innerHTML = `
+        <img src="${selectedGame.imgIconURL}" alt="${selectedGame.name}" style="float: left; margin-right: 20px; max-height: 100%; width: auto;">
+        <div style="float: left; max-width: calc(100% - 120px);">
+            ${selectedGame.name}
+        </div>
+        <div style="clear: both;"></div>
+    `;
         }
     };
     requestAnimationFrame(spin);
@@ -116,19 +189,33 @@ function showResultAndButtons(result) {
     const reshuffleBtn = document.createElement('button');
     reshuffleBtn.id = 'reshuffle';
     reshuffleBtn.innerText = 'Reshuffle ';
-    reshuffleBtn.className = 'action-button'; // Use the same class as the spin button for consistent styling
+    reshuffleBtn.className = 'action-button';
+    document.body.appendChild(reshuffleBtn);
+
     reshuffleBtn.addEventListener('click', function() {
-        // Add logic for what happens when "Reshuffle Games" is clicked
+        currentGamesSubset = getRandomSubsetOfGames(games); //NEW RANDOM SUBSET CHOSEN
+        sections = currentGamesSubset.map(game => game.name); //SECTIONS UPDATED
+
+        //FOR TESTING
         console.log('Reshuffling games...');
+        console.log(sections);
+        drawWheel();
     });
 
     //GO TO GAME BUTTON
     const goToGameBtn = document.createElement('button');
-    goToGameBtn.id = 'goToGame';
+    goToGameBtn.id = "goToGame";
     goToGameBtn.innerText = 'Go to Game';
-    goToGameBtn.className = 'action-button'; // Use the same class as the spin button for consistent styling
+    goToGameBtn.className = 'action-button';
     goToGameBtn.addEventListener('click', function() {
-        // Add logic for what happens when "Go to Game" is clicked
+        const imgDisplayArea = document.getElementById('imgDisplayArea');
+
+        //DRAGS USERS SCREEN DOWN IN ORDER TO SEE GAME INFORMATION
+        if (imgDisplayArea) {
+            imgDisplayArea.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            console.warn('imgDisplayArea not found');
+        }
         console.log('Going to game...');
     });
 
