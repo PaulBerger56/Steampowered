@@ -47,6 +47,16 @@
 			<artifactId>JOpenId</artifactId>
 			<version>1.08</version>
 		</dependency>
+
+		<!-- Supabase
+		<dependency>
+			<groupId>io.supabase</groupId>
+			<artifactId>supabase-java</artifactId>
+			<version>1.2.0</version>
+		</dependency> -->
+
+
+
 	</dependencies>	
 	<build>
 		<plugins>
