@@ -51,6 +51,7 @@ public class ParserService {
         dBFailedCalls = failedCallService.getAllFailedCallsAsMap();
 
         ArrayList<String> gameIds = new ArrayList<>();
+        ArrayList<String> entireUserLibrary = new ArrayList<>();
         
         String apiUrlWithSteamId = String.format(libraryUrl, userId);
 
@@ -62,6 +63,10 @@ public class ParserService {
             JsonNode gamesNode = root.path("response").path("games");
             for(JsonNode gameNode: gamesNode){
                 String appId = gameNode.path("appid").asText();
+
+                // saves all Id's to add to the user object to make sure entire library is used when updating
+                // user object
+                entireUserLibrary.add(appId);
 
                 // Checks if the id exists in the games or failed calls stored in the database.
                 // If it does exist, it adds the object to the proper service and continues
@@ -81,11 +86,10 @@ public class ParserService {
         } catch(IOException e) {
             e.printStackTrace();
             System.out.println("Error grabbing user library with Steam ID");
-        } 
+        }        
         
         
-        
-        userService.getUser().setUserGames(gameIds);
+        userService.getUser().setUserGames(entireUserLibrary);
         
         // If the user is not currently in the database, add them
         if(!userDbService.exists(userService.getUser().getSteamID())) {
