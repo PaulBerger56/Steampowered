@@ -18,7 +18,6 @@
 
 
 # Dependency Versions
-========
 Release       | Short Description
 ------------- | -------------
 [Spring Boot Starter Thymeleaf](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf)  | Starter for building MVC web applications using Thymeleaf views **Version: None**
