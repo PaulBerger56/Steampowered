@@ -74,6 +74,9 @@ The code needs to be run from the terminal with maven and the user will need to 
      * In the Admin SDK configuration snippet box, click the Java radio button.  Once the code is updated to java, press the generate new private key button at the bottom.  This will download a JSON file to your machine.
      * Rename this JSON file serviceAccountKey.json and add it to the root folder of Steampowered.  This file needs to be renamed precisely so that the code recognizes it and it is properly added to the gitignore to keep your information from being uploaded to github.
 
+<br>
+
+
 **5. Run the code**
 
  * Repeat step 3 with whichever Maven command you used then.
