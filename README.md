@@ -41,12 +41,11 @@ The code needs to be run from the terminal with maven and the user will need to 
 * Clone the master branck of this repository.
   ```
   git clone https://github.com/PaulBerger56/Steampowered/
-  ```
-  
-
+  ```  
+ <br>
 * Install Maven on the machine (This step is optional because there is a Maven Wrapper inside the Project itself)
   * https://maven.apache.org/install.html
-    
+    <br>
  
 * Run Maven in a terminal inside the root folder of the project.  It is recommended to open the project in your preferred IDE and starting a new terminal there.
   * If you have maven installed on the machine, run this command:
