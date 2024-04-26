@@ -49,7 +49,7 @@ The code needs to be run from the terminal with maven and the user will need to 
 
 <br>
  
-**3. Run Maven in a terminal inside the root folder of the project.  It is recommended to open the project in your preferred IDE and starting a new terminal there.**
+**3. Run Maven in a terminal inside the root folder of the project.  It is recommended to open the project in your preferred IDE and starting a new terminal there. This will install and update all dependencies, but the project will not be fully functional yet.**
    
    * If you have maven installed on the machine, run this command:
      ```
@@ -59,6 +59,14 @@ The code needs to be run from the terminal with maven and the user will need to 
      ```
      ./mvnw clean spring-boot:run
      ```
+<br>
+
+**4. Create your own firebase database and attach it to the program.
+
+  * Create a Firebase account and click Add Project on the console page. Fill in your credentials and click create project.
+     * https://firebase.google.com
+       
+  * Once in the new project, click on the firestore tab. On the next page, click create database, then select your server location and press next.  On the next page, select Start in test mode and press create.
 
 
 
