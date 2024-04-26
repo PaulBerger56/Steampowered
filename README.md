@@ -1,7 +1,7 @@
                                                    
                                                                      
 # Steampowered
-* **Group Project for GGC Softdev2 during Spring 2024 Semester**
+* **Steampowered is a Group Project for GGC Softdev2 during Spring 2024 Semester**
 
 * **Steampowered is a website that allows steam users to have a random game from their library randomly selected for them. To make it a little more fun, a roulette wheel will be filled with a random selection of the user's games and spun.  There is a genre filter on the page where users can select one or multiple genres that they would like to play, and the wheel will populate only with games marked with that genre on the steam api.**  
 
@@ -20,7 +20,10 @@
 * **Albert Austin IV**
     * Testing Lead
 
+# Requirements
+As of 4/26/24 Steampowered is not yet hosted anywhere and must be run from the code itself.
 
+To run the code, you need and IDE that can run Java and having Maven installed on the machine is recommended.  There is a maven wrapped included in the project itself in case the user does not have maven installed.
 
 
 # Dependency Versions
