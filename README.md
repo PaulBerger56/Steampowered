@@ -1,4 +1,15 @@
-                                                   
+```
+
+ _____ _                      ______                              _  
+/  ___| |                     | ___ \                            | | 
+\ `--.| |_ ___  __ _ _ __ ___ | |_/ /____      _____ _ __ ___  __| | 
+ `--. \ __/ _ \/ _` | '_ ` _ \|  __/ _ \ \ /\ / / _ \ '__/ _ \/ _` | 
+/\__/ / ||  __/ (_| | | | | | | | | (_) \ V  V /  __/ | |  __/ (_| | 
+\____/ \__\___|\__,_|_| |_| |_\_|  \___/ \_/\_/ \___|_|  \___|\__,_| 
+                                                                     
+                                                                     
+
+```                                                   
                                                                      
 # Steampowered
 * **Steampowered is a Group Project for GGC Softdev2 during Spring 2024 Semester**
@@ -31,9 +42,9 @@ The code needs to be run from the terminal with maven and the user will need to 
 
 # Developer Installation
 * Clone the master branck of this repository.
-  '''
+  ```
   git clone https://github.com/PaulBerger56/Steampowered/
-  '''
+  ```
 
 
 
