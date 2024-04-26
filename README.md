@@ -10,7 +10,7 @@
                                                                      
 
 ```
-==================================                                                 
+======================                                              
                                                                      
 * **Steampowered is a Group Project for GGC Softdev2 during Spring 2024 Semester**
 
