@@ -43,6 +43,7 @@ The code needs to be run from the terminal with maven and the user will need to 
   git clone https://github.com/PaulBerger56/Steampowered/
   ```  
  <br>
+
 * Install Maven on the machine (This step is optional because there is a Maven Wrapper inside the Project itself)
   * https://maven.apache.org/install.html
   
