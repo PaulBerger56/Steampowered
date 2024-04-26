@@ -4,7 +4,7 @@
 **Group Project for Softdev2**
 
 
-**Team**
+# Team
 * **Paul Berger**
     * Code Architect
 * **Jason Urquilla-Martinez**
