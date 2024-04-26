@@ -1,14 +1,10 @@
 ```
-
  _____ _                      ______                              _  
 /  ___| |                     | ___ \                            | | 
 \ `--.| |_ ___  __ _ _ __ ___ | |_/ /____      _____ _ __ ___  __| | 
  `--. \ __/ _ \/ _` | '_ ` _ \|  __/ _ \ \ /\ / / _ \ '__/ _ \/ _` | 
 /\__/ / ||  __/ (_| | | | | | | | | (_) \ V  V /  __/ | |  __/ (_| | 
 \____/ \__\___|\__,_|_| |_| |_\_|  \___/ \_/\_/ \___|_|  \___|\__,_| 
-                                                                     
-                                                                     
-
                                                                                                                         
 ```
                                            
@@ -46,6 +42,9 @@ The code needs to be run from the terminal with maven and the user will need to 
   ```
   git clone https://github.com/PaulBerger56/Steampowered/
   ```
+
+* Install Maven on the machine (This step is optional because there is a Maven Wrapper inside the Project itself)
+  * https://maven.apache.org/install.html
 
 
 
