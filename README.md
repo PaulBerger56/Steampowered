@@ -28,7 +28,7 @@ To run the code, you need and IDE that can run Java and having Maven installed o
 The code needs to be run from the terminal with maven and the user will need to open a browser and go to localhost:8080 as long as the port number as not been changed in the configuration file.
 
 
-# Dependency Versions
+# Dependencies
 Release       | Short Description
 ------------- | -------------
 [Spring Boot Starter Thymeleaf](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf)  | Starter for building MVC web applications using Thymeleaf views **Version: None**
