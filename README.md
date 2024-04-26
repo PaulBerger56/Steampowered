@@ -39,7 +39,7 @@ The code needs to be run from the terminal with maven and the user will need to 
  * At this time, the Out-of-Box installation is the same as the Developer installation.  Please refer to the Developer Installation section for instructions.
 
 # Developer Installation
-**1. Clone the master branck of this repository.**
+**1. Clone the master branch of this repository.**
    ```
    git clone https://github.com/PaulBerger56/Steampowered/
    ```  
