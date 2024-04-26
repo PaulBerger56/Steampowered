@@ -1,7 +1,10 @@
                                                    
                                                                      
 # Steampowered
-**Group Project for Softdev2**
+**Group Project for GGC Softdev2 during Spring 2024 Semester**
+Steampowered is a website that allows steam users to have a random game from their library randomly selected for them. To make it a little more fun, a roulette wheel will be filled with a random selection of the user's games and spun.  There is a genre filter on the page where users can select one or multiple genres that they would like to play, and the wheel will populate only with games marked with that genre on the steam api.  
+
+The ideal user for this website would be a Steam user that has many games.  Over time, their Steam library can get filled with a ton of games.  When a user has so many games, it can be hard to make a decision on what they should actually play.  If they are being indecisive, they can come to this website and allow the wheel to make the choice for them.
 
 
 # Team
