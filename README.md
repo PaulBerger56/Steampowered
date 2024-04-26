@@ -68,7 +68,10 @@ The code needs to be run from the terminal with maven and the user will need to 
        
   * Once in the new project, click on the firestore tab. On the next page, click create database, then select your server location and press next.  On the next page, select Start in test mode and press create.
   
-  * After the database has been made, click the cog wheel in the side bar and then click on Project settings. Once on the project settings page, click on the Service accounts tab.  In the Admin SDK configuration snippet box, click the Java radio button.  Once the code is updated to java, press the generate new private key button at the bottom.  This will download a JSON file to your machine.  Rename this JSON file serviceAccountKey.json and add it to the root folder of Steampowered.  This file needs to be renamed precisely so that the code recognizes it and it is properly added to the gitignore to keep your information from being uploaded to github.
+  * After the database has been made, click the cog wheel in the side bar and then click on Project settings.
+     * Once on the project settings page, click on the Service accounts tab.
+     * In the Admin SDK configuration snippet box, click the Java radio button.  Once the code is updated to java, press the generate new private key button at the bottom.  This will download a JSON file to your machine.
+     * Rename this JSON file serviceAccountKey.json and add it to the root folder of Steampowered.  This file needs to be renamed precisely so that the code recognizes it and it is properly added to the gitignore to keep your information from being uploaded to github.
 
 **5. Run the code**
 
