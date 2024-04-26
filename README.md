@@ -25,6 +25,8 @@ As of 4/26/24 Steampowered is not yet hosted anywhere and must be run from the c
 
 To run the code, you need and IDE that can run Java and having Maven installed on the machine is recommended.  There is a maven wrapped included in the project itself in case the user does not have maven installed.
 
+The code needs to be run from the terminal with maven and the user will need to open a browser and go to localhost:8080 as long as the port number as not been changed in the configuration file.
+
 
 # Dependency Versions
 Release       | Short Description
