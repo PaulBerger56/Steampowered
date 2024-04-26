@@ -27,6 +27,15 @@ To run the code, you need and IDE that can run Java and having Maven installed o
 
 The code needs to be run from the terminal with maven and the user will need to open a browser and go to localhost:8080 as long as the port number as not been changed in the configuration file.
 
+# Out-of-Box Installation
+
+# Developer Installation
+* Clone the master branck of this repository.
+  '''
+  git clone https://github.com/PaulBerger56/Steampowered/
+  '''
+
+
 
 # Dependencies
 Release       | Short Description
