@@ -101,7 +101,11 @@ The code needs to be run from the terminal with maven and the user will need to 
  * Once you see the project loaded in the terminal, open a web browser and go to localhost:8080
  * At this point the website should work as intended.  There will be a very long delay between when you log in with the Steam openId and being redirected to the wheel page.  This is due to the fact that your database is empty and the code is having to make a call for each game in your library.  Once several people log in, the database will start to fill and this login time will be reduced significantly.
 
+# License
 
+This software is protected under the [GNU General Public License](http://www.gnu.org/licenses/gpl.html)
+You may use it, provided that any modifications you make to it are available for
+others to use and modify in a similar manner.
 
 # Dependencies
 Release       | Short Description
