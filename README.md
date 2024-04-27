@@ -43,6 +43,15 @@ To run the code, you need and IDE that can run Java and having Maven installed o
 
 The code needs to be run from the terminal with maven and the user will need to open a browser and go to localhost:8080 as long as the port number as not been changed in the configuration file.
 
+# Build Architecture
+* **Html / CSS**
+* **Java**
+* **JavaScript**
+* **Firebase** 
+* **Apache Maven**
+* **OpenID**
+* **Steam Market API**  
+
 # Out-of-Box Installation
  * At this time, the Out-of-Box installation is the same as the Developer installation.  Please refer to the Developer Installation section for instructions.
 
