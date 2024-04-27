@@ -16,7 +16,7 @@
 * **The ideal user for this website would be a Steam user that has many games.  Over time, their Steam library can get filled with a ton of games.  When a user has so many games, it can be hard to make a decision on what they should actually play.  If they are being indecisive, they can come to this website and allow the wheel to make the choice for them.**
 
 # Repo location URL
-* **PaulBerger56/Steampowered: Group Project for Softdev2 (github.com)**
+* **PaulBerger56/Steampowered: Group Project for Softdev2 (github.com) https://github.com/PaulBerger56/Steampowered/**
 # Progress tracking tool and URL
 * **[SteamPowered - Georgia Gwinnett College Student Jira (ggc.edu)](https://jira.ggc.edu/projects/STEAM/summary)**
 # Communication tool
