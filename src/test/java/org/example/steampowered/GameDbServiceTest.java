@@ -1,4 +1,4 @@
 package org.example.steampowered;
 
-public class UserLibraryTest {
+public class GameDbServiceTest {
 }
