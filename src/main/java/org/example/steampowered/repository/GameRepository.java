@@ -25,4 +25,8 @@ public class GameRepository {
     public void deleteGame(String id) {
         gameMap.remove(id);
     }
+
+    public void clearMap(){
+        gameMap.clear();
+    }
 }

@@ -50,6 +50,9 @@ public class ParserService {
         dbGames = gameDbService.getAllGamesAsMap();
         dBFailedCalls = failedCallService.getAllFailedCallsAsMap();
 
+        // Clear previous games if new user uses the service
+        gameService.clearMap();
+
         ArrayList<String> gameIds = new ArrayList<>();
         ArrayList<String> entireUserLibrary = new ArrayList<>();
         

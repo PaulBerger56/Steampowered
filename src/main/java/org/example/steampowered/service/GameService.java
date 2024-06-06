@@ -41,6 +41,10 @@ public class GameService {
         gameRepository.deleteGame(id);
     }
 
+    public void clearMap(){
+        gameRepository.clearMap();
+    }
+
 
     public String getGamesAsJson(){
         ObjectMapper objectMapper = new ObjectMapper();
