@@ -36,8 +36,8 @@ public class OpenIdService {
     public String activateOpenId() {
         OpenIdManager manager = new OpenIdManager();
         // TODO  change these from localhost after uploading the project to a hosting site
-        manager.setReturnTo("http://localhost:8080/index");
-        manager.setRealm("http://localhost:8080");
+        manager.setReturnTo("https://steampowered.onrender.com/index");
+        manager.setRealm("https://steampowered.onrender.com");
 
         Endpoint endpoint = manager.lookupEndpoint("https://steamcommunity.com/openid/");      
         Association association = manager.lookupAssociation(endpoint);      
